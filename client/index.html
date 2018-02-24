@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(212, 219, 226);
+      overflow: hidden;
+    }
+
+    #msg_form {
+      position: absolute;
+      margin-bottom: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    #users {
+      height: 300px;
+      padding-left: 30px;
+      opacity: 0.8;
+    }
+
+    #users ul {
+      padding-left: 20px;
+    }
+
+    #users li {
+      font-size: 16px;
+    }
+
+    #messages {
+      overflow-y: scroll;
+    }
+  </style>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</head>
+<body>
+
+  <div id="wrap">
+    <div class="row">
+      <div class="col-md-12 panel">
+        <h1>Messages</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 panel" id="users">
+        <h3>Users online:</h3>
+        <ul id="userslist"></ul>
+      </div>
+      <div class="col-md-10">
+        <div id="messages"></div>
+      </div>
+    </div>
+    <div class="row well" id="msg_form">
+      <div class="col-md-12">
+        <div class="input-group">
+          <input type="text" id="input" class="form-control input-lg" placeholder="Message">
+          <span class="input-group-btn">
+            <button class="btn btn-lg btn-success" id="btn">Send</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

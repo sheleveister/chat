@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autorisation</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    body {
+      background-color: rgb(212, 219, 226);
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 800px;
+      height: 100vh;
+      margin: 0 auto;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      const btn = document.getElementsByTagName('button')[0];
+      const input = document.getElementsByTagName('input')[0];
+
+      btn.onclick = () => {
+        if (input.value === '') {
+          alert('Please enter name');
+        }
+        window.location.href = `/${input.value}`;
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <div class="wrap">
+    <h2>Start chat</h2>
+    <div class="input-group">
+      <input type="text" class="input-lg form-control username" placeholder="Username">
+      <span class="input-group-btn">
+        <button class="btn btn-lg btn-warning">Connect</button>
+      </span>
+    </div>
+  </div>
+
+</body>
+</html>
